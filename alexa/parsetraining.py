@@ -68,11 +68,7 @@ def get_credentials():
     return credentials
 
 def main():
-    """Shows basic usage of the Sheets API.
-
-    Creates a Sheets API service object and prints the names and majors of
-    students in a sample spreadsheet:
-    https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
+    """Parse schedule
     """
     credentials = get_credentials()
     http = credentials.authorize(httplib2.Http())
@@ -94,8 +90,10 @@ def main():
             print('No data found.')
         else:
             if config['columns']:
+                # pick out the dates we care about
                 now=datetime.datetime.now()
                 enddate=dateparser.parse("one week from now")
+
                 for row in values:
                     if len(row)>3:
                         session={}
@@ -116,11 +114,6 @@ def main():
                         output.append(session)
 
         print(json.dumps(output,indent=4))
-                #print(config['columns'])
-
-            #for row in values:
-                # Print columns A and E, which correspond to indices 0 and 4.
-             #   print('%s, %s' % (row[0], row[4]))
 
 
 if __name__ == '__main__':

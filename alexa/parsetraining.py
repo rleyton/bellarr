@@ -1,3 +1,17 @@
+###
+# Proof of concept script to parse our running club's training schedule, and produce an Alexa Flash Briefing Skill
+### TODO:
+# Schedule execution
+# Add sftp upload to club website
+# publish skill formally so it's available to all
+#
+### 
+# Original Idea: Kevin Queenan
+# Author: Richard Leyton (richard@leyton.org), @rleyton
+###
+# Script credits: The core Google Sheets logic is based on quickStart.py from https://developers.google.com/sheets/api/quickstart/python
+###
+
 from __future__ import print_function
 import httplib2
 import os
@@ -21,7 +35,7 @@ except ImportError:
 SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
 CLIENT_SECRET_FILE = 'client_secret.json'
 APPLICATION_CONFIG = 'appconfig.json'
-APPLICATION_NAME = 'Google Sheets API Python Quickstart'
+APPLICATION_NAME = 'Bellahouston Road Runners training schedule - Alexa Flash Briefing generator'
 
 
 def get_credentials():

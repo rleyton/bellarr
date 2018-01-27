@@ -1,16 +1,17 @@
 ###
 # Proof of concept script to parse our running club's training schedule, and produce an Alexa Flash Briefing Skill
-### TODO:
-# Schedule execution
-# Add sftp upload to club website
-# publish skill formally so it's available to all
-#
 ### 
 # Original Idea: Kevin Queenan
 # Author: Richard Leyton (richard@leyton.org), @rleyton
 ###
 # Script credits: The core Google Sheets logic is based on quickStart.py from https://developers.google.com/sheets/api/quickstart/python
 ###
+# TODO:
+# Schedule execution
+# Add sftp upload to club website
+# publish skill formally so it's available to all members
+#
+### 
 
 from __future__ import print_function
 import httplib2
